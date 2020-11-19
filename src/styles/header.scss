@@ -1,0 +1,63 @@
+@import "variables";
+
+.header {
+  @include flex-center-spaceBetween;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header__navbar {
+  @include flex-center;
+  margin-right: 50px;
+  height: 60px;
+}
+
+.header__image {
+  height: 40px;
+  width: 40px;
+  margin-left: 50px;
+}
+
+.header_ulist {
+  padding-left: 0;
+  padding-right: 0;
+  line-height: 60px;
+}
+
+.header_list {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 17px;
+}
+
+.header_link {
+  text-decoration: none;
+  color: black;
+  line-height: 60px;
+  padding: 22.5px 0;
+}
+
+.header_list:last-child {
+  margin-right: 0;
+}
+
+.header_link:hover {
+  color: #00acdc;
+}
+
+.is-active {
+  color: #00acdc;
+}
+
+.is-active::after {
+  display: flex;
+  position: absolute;
+  content: "";
+  top: 56px;
+  background-color: #00acdc;
+  height: 4px;
+  width: 38px;
+  border-radius: 8px;
+}

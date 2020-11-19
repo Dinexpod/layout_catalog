@@ -1,3 +1,15 @@
-body {
-  margin: 0;
+@import "resets";
+@import "header";
+@import "content";
+@import "variables";
+
+.goods {
+  @include flex-center;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  padding: 0 16px;
+}
+
+.goods__card {
+  margin: 0 24px 50px;
 }
