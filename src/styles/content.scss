@@ -1,92 +1,90 @@
 @import "variables";
 
 .card {
-  height: 403px;
-  width: 200px;
+  @include sizeWH(200px, 403px);
   padding: 15px 14px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__image {
+    @include flex-center;
+    margin: 15px 0 45px;
+  }
+
+  &__imacImage {
+    @include sizeWH(160px, 134px);
+  }
+
+  &__about {
+    margin: 5px 0;
+  }
+
+  &__description {
+    margin: 5px 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__price {
+    @include flex-center-spaceBetween;
+    margin: 20px 0;
+  }
+
+  &__priceText {
+    position: relative;
+    top: 2px;
+  }
+
+  &__priceNumber {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  &__button {
+    @include flex-center;
+    @include sizeWH(170px, 40px);
+  }
+
+  &__buttonText {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    background: $main-blue-color;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 5px;
+    border: 1px solid $main-blue-color;
+
+    &:hover {
+      color: $main-blue-color;
+      background-color: white;
+    }
+  }
 }
 
-.card:hover {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
-}
-
-.card__image {
-  @include flex-center;
-  margin: 15px 0 45px;
-}
-
-.card__imacImage {
-  height: 134px;
-  width: 160px;
-}
-
-.card_about {
-  margin: 5px 0;
-}
-
-.card__description {
-  margin: 5px 0;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-}
-
-.card__rate {
+.stars {
   @include flex-center-spaceBetween;
   margin: 15px 0;
+
+  &__row {
+    @include flex-center;
+  }
+
+  &__instance {
+    margin-right: 4px;
+    background: url("../images/star.svg") no-repeat center;
+    @include size(15px);
+  }
 }
 
-.stars__row {
-  @include flex-center;
-}
-
-.stars__instance {
-  margin-right: 4px;
-  background: url("../images/star.svg") no-repeat center;
-  height: 15px;
-  width: 15px;
-}
-
-.stars--4 .stars__instance:nth-child(-n+4) {
-  background: url("../images/star-active.svg") no-repeat center;
-}
-
-.card__price {
-  @include flex-center-spaceBetween;
-  margin: 20px 0;
-}
-
-.card__priceText {
-  position: relative;
-  top: 2px;
-}
-
-.card__priceNumber {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.card__button {
-  @include flex-center;
-  height: 40px;
-  width: 170px;
-}
-
-.card__buttonText {
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: bold;
-  background: #00acdc;
-  transition: background-color 0.2s, color 0.2s;
-  border-radius: 5px;
-  border: 1px solid #00acdc;
-}
-
-.card__buttonText:hover {
-  color: #00acdc;
-  background-color: white;
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__instance:nth-child(-n+#{$i}) {
+    background: url("../images/star-active.svg") no-repeat center;
+  }
 }
