@@ -13,19 +13,15 @@
   &__image {
     @include flex-center;
     margin: 15px 0 45px;
-  }
 
-  &__imacImage {
-    @include sizeWH(160px, 134px);
-  }
-
-  &__about {
-    margin: 5px 0;
+    &Image {
+      @include sizeWH(160px, 134px);
+    }
   }
 
   &__description {
     margin: 5px 0;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     font-size: 12px;
     line-height: 15px;
   }
@@ -33,37 +29,37 @@
   &__price {
     @include flex-center-spaceBetween;
     margin: 20px 0;
-  }
 
-  &__priceText {
-    position: relative;
-    top: 2px;
-  }
+    &Text {
+      position: relative;
+      top: 2px;
+    }
 
-  &__priceNumber {
-    font-weight: bold;
-    font-size: 16px;
+    &Number {
+      font-weight: $font-weight-bold;
+      font-size: 16px;
+    }
   }
 
   &__button {
     @include flex-center;
     @include sizeWH(170px, 40px);
-  }
 
-  &__buttonText {
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    background: $main-blue-color;
-    transition: background-color 0.2s, color 0.2s;
-    border-radius: 5px;
-    border: 1px solid $main-blue-color;
+    &Text {
+      background: $main-blue-color;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      font-size: 14px;
+      transition: background-color 0.2s, color 0.2s;
+      border-radius: 5px;
+      border: 1px solid $main-blue-color;
 
-    &:hover {
-      color: $main-blue-color;
-      background-color: white;
+      &:hover {
+        color: $main-blue-color;
+        background-color: white;
+      }
     }
   }
 }
